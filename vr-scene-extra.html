@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="resources/js/aframe-event-set-component.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+            <img id="sky" src="resources/img/sky-seamless.jpg">
+            <img id="pool-water" src="resources/img/poolwater2.jpg">
+            <img id="earth" src="resources/img/earth.jpg">
+            <img id="luna" src="resources/img/moon.jpg">
+            <video id="fractal" src="resources/vid/fractal.mp4"></video>
+            <a-asset-item id="cockpit" src="resources/gltf/cockpit/scene.gltf"></a-asset-item>
+        </a-assets>
+
+        <a-entity id="player" camera position="0 15 40" look-controls="pointerLockEnabled:true"
+            wasd-controls="acceleration: 1000" cursor>
+            <a-cursor color="red"></a-cursor>
+        </a-entity>
+
+        <a-sky color="#222"></a-sky>
+
+        <!--<a-entity id="textEarth" text="value: Earth; height: 150; width: 150; align: center" position="0 15 0"
+            look-at="#player">
+        </a-entity>
+        <a-sphere id="planetEarth" src="#earth" radius="5" position="0 0 0"
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 4000; easing: linear;">
+            <a-entity position="0 0 0"
+                animation="property: rotation; to: 0 720 0; loop: true; dur: 5000; easing: linear;">
+                <a-sphere src="#luna" radius="0.6" position="8 0 0"></a-sphere>
+            </a-entity>
+        </a-sphere>-->
+
+        <!--<a-curvedimage src="#fractal" height="14" theta-length="90" theta-start="75" radius="20" position="1.5 9.5 24"
+            rotation="0 60 0" opacity="1">
+        </a-curvedimage>
+        <a-plane src="#fractal" position="1.5 9 7" scale="33 15" opacity="1"></a-plane>-->
+
+        <a-curvedimage src="#earth" height="13" theta-length="90" theta-start="75" radius="15" position="20 10 25"
+            rotation="0 25 0" opacity=" 0.5">
+        </a-curvedimage>
+        <a-video src="#fractal" position="1.5 9 7" opacity="1"></a-video>
+
+        <a-entity gltf-model="#cockpit" position="-25 -25 0" rotation="0 -90 0" scale="1 1 1" animation-mixer>
+        </a-entity>
+
+        <a-entity id="txt1" text="value: Btn 1; height: 30; width: 30; align: center" position="-7 -3 14"
+            rotation="-45 0 0">
+        </a-entity>
+        <a-cylinder id="btn1" color="red" radius="2" position="-7 -5 17" rotation="45 0 0"></a-cylinder>
+
+        <a-entity id="txt2" text="value: Btn 2; height: 30; width: 30; align: center" position="-2 -3 14"
+            rotation="-45 0 0">
+        </a-entity>
+        <a-cylinder id="btn2" color="red" radius="2" position="-2 -5 17" rotation="45 0 0"></a-cylinder>
+
+        <a-entity id="txt3" text="value: Btn 3; height: 30; width: 30; align: center" position="3 -3 14"
+            rotation="-45 0 0">
+        </a-entity>
+        <a-cylinder id="btn3" color="red" radius="2" position="3 -5 17" rotation="45 0 0"></a-cylinder>
+
+        <a-entity id="txt4" text="value: Btn 4; height: 30; width: 30; align: center" position="8 -3 14"
+            rotation="-45 0 0">
+        </a-entity>
+        <a-cylinder id="btn4" color="red" radius="2" position="8 -5 17" rotation="45 0 0"></a-cylinder>
+    </a-scene>
+
+    <p>Cockpit GLTF Model: "cockpit" by JaysonStauffer is licensed under Creative Commons Attribution.
+        https://skfb.ly/6SxUA To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.</p>
+
+    <script>
+        var plsWork = document.querySelector("#planetEarth");
+        var plsText = document.querySelector("#textEarth");
+        plsWork.addEventListener("mouseenter", function () {
+            plsText.setAttribute("visible", false);
+        });
+        plsWork.addEventListener("mouseleave", function () {
+            plsText.setAttribute("visible", true);
+        });
+    </script>
+</body>
+
+</html>

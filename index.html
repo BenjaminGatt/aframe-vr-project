@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="row main-nav">
+                <a href="#"><img src="resources/img/logo.svg" class="logo" id="js-vr-logo"></a>
+                <!--<a class="mobile-nav" onclick="mobileNav()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+                        <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z" />
+                    </svg>
+                </a>-->
+                <ul class="nav-links" id="js-nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a class="current-page" href="#">VR Scenes</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <ul class="nav-icons" id="js-nav-icons">
+                    <li><a class="icons" href="https://github.com/BenjaminGatt" target="_blank"
+                            onmouseover="bracketTransform()" onmouseout="bracketReturn()"><svg version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" width="50" height="50">
+                                <path class="brackets-icon"
+                                    d="M1.3 25.5L17.7 9M1.3 24.5L17.7 41M29 11l-7 28M49 24.3L32.5 40.8M49 25.3L32.5 8.8" />
+                            </svg></a></li>
+                    <li><a class="icons" href="https://www.mcast.edu.mt" target="_blank" onmouseover="mcastTransform()"
+                            onmouseout="mcastReturn()"><svg class="icon2" xmlns="http://www.w3.org/2000/svg" width="50"
+                                height="50">
+                                <path class="mcast-blue"
+                                    d="M27.5 29.7V7a54.7 54.7 0 01-10.3 10C10.7 21.8 4.7 23.7.5 24.5v5.2h27z"
+                                    fill="#555" />
+                                <path class="mcast-red"
+                                    d=" M38.4 35.2V5.6c-3.7 4.3-8.4 9-14.1 13.1-9.3 6.6-17.7 9-23.9 9.9v6.8h38"
+                                    fill="#7E7F85" />
+                                <path class="mcast-yellow"
+                                    d="M49.4 39.9V5C45 10.6 39 17 31.5 22.2 19 30.8 7.7 32.2.5 32.1V32v8-.1h48.9"
+                                    fill="#888" />
+                            </svg></a></li>
+                    <li><a class="icons" href="http://benjamingatt.codes/" target="_blank" onmouseover="benTransform()"
+                            onmouseout="benReturn()">
+                            <svg width="50" height="50">
+                                <path class="ben-codes-icon"
+                                    d="M12.1 37.6l.3-2.7-6.1.8L5.2 45h14.6l1.4-7.4zM36.9 31.9v.2l-.2 2c-.3 2.3-1 3.5-2.6 3.5H23.2L21.8 45h13.6c4.4 0 6.4-3.1 7-8.7l.4-3.6c.1-.6.1-1.1.1-1.7l-6 .9zM13.1 27.9h9.8l1.2-6.7H13.9l.9-7.9L9 12.1 6.3 34.7l6.1-.8zM35.2 21.2h-9.1l-1.3 6.6h9.9c1.3 0 2.3.2 2.3 2.2 0 .2 0 .5-.1.8l6-.8v-.4c0-4.1-1.9-5-3.3-5.3 1.3-.2 3.2-1 4.2-5.2L38.1 18c-.3 2.5-1.4 3.2-2.9 3.2zM36.5 12.1c1.3 0 2 .2 2 1.9 0 .4 0 .9-.1 1.5l-.3 1.5 5.7 1.3c.2-.7.3-1.5.4-2.5l.3-2.4c.1-.9.2-1.8.2-2.6 0-3.9-1.5-6.1-5.1-6.1H29.1l-1.4 7.4h8.8zM14.9 12.1h10.8l1.4-7.4H9.7L9 11.1l5.8 1.2z" />
+                            </svg>
+                        </a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section class="section-welcome">
+        <div class="row">
+            <h1>Welcome to the VR Scenes Portfolio</h1>
+        </div>
+    </section>
+    <section class="section-vr-scenes">
+        <div class="row">
+            <div class="col s-1 box">
+                <a href="vr-scene-1.html"><img src="resources/img/vr-scene-1.png"></a>
+                <a href="vr-scene-1.html">
+                    <h2>VR Scene 1</h2>
+                </a>
+                <h3>Description:</h3>
+                <p>A simple VR scene showcasing ocean and physics a-frame extensions. A 360-degree image is used as the
+                    background, and a directional light is placed to align with the background's sun.</p>
+                <a class="btn" href="vr-scene-1.html">View Scene 1</a>
+                <hr>
+            </div>
+            <div class="col s-1 box">
+                <a href="vr-scene-2.html"><img src="resources/img/vr-scene-2-3.png"></a>
+                <a href="vr-scene-2.html">
+                    <h2>VR Scene 2</h2>
+                </a>
+                <h3>Description:</h3>
+                <p>A slightly more complex VR scene which utilises various animations, spot-lights, ambient light, and
+                    an a-frame extension which allows text to always face the player.</p>
+                <a class="btn" href="vr-scene-2.html">View Scene 2</a>
+                <hr>
+            </div>
+            <div class="col s-1 box">
+                <a href="vr-scene-3.html"><img src="resources/img/vr-scene-3-4.png"></a>
+                <a href="vr-scene-3.html">
+                    <h2>VR Scene 3</h2>
+                </a>
+                <h3>Description:</h3>
+                <p>An interactive game of Connect Four, the code for which was written by me. There are two directional
+                    lights matching the background, as well as animations for moving the markers.</p>
+                <a class="btn" href="vr-scene-3.html">View Scene 3</a>
+            </div>
+        </div>
+    </section>
+    <script src="anime-master/lib/anime.min.js"></script>
+    <script src="resources/js/script.js"></script>
+</body>
+
+</html>

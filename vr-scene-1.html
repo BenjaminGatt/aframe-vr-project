@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-extras.ocean@%5E3.5.x/dist/aframe-extras.ocean.min.js"></script>
+    <script src="resources/js/aframe-event-set-component.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js">
+    </script>-->
+    <script src="resources/js/aframe-physics-system.js"></script>
+</head>
+
+<body>
+    <a-scene physics="friction: 0.1; restitution: 1">
+        <a-assets>
+            <img id="sky" src="resources/img/panorama-2.jpeg">
+            <img id="beach-ball" src="resources/img/BeachBallColor.jpg">
+            <img id="pool-water" src="resources/img/poolwater2.jpg">
+            <img id="pool-tiles" src="resources/img/pool-tiles.jpg">
+            <img id="pool-wall" src="resources/img/white-wall-paint-seamless.jpg">
+            <img id="pool-wall-map" src="resources/img/white-wall-paint-seamless-normal-map.jpg">
+            <img id="sci-fi-metal" src="resources/img/sci-fi-metal.jpg">
+            <img id="logo" src="resources/img/VR_Logo_v7_black_clean.svg">
+            <img id="homepage" src="resources/img/bin1.jpg">
+            <img id="vr-scene-2" src="resources/img/stars-galaxy-2k.jpg">
+            <img id="vr-scene-3" src="resources/img/panorama-4.jpeg">
+        </a-assets>
+        <a-sky src="#sky" repeat="1 1" rotation="0 0 0" position="0 50 0" opacity="1"></a-sky>
+        <a-light type="directional" color="#ffc59e" position="-150 160 22" intensity="1"
+            light="angle: 60; decay: 0; distance: 100"></a-light>
+        <a-entity camera position="10 2 20" look-controls="pointerLockEnabled:true" wasd-controls="acceleration: 200"
+            cursor>
+            <a-cursor color="red"></a-cursor>
+        </a-entity>
+        <!--<a-entity position="0 100 0" particle-system="color: #EF0000,#44CC00"></a-entity>-->
+        <!--<a-entity id="sphere" geometry="primitive: sphere" material="color: #EFEFEF; shader: flat" position="0 0.15 -55"
+            light="type: point; intensity: 5"
+            animation="property: position; easing: easeInOutQuad; dir: alternate; dur: 1000; to: 0 -0.10 -55; loop: true">
+        </a-entity>-->
+
+        <!--<a-entity position="0 0 0" animation="property: rotation; to: 0 0 360; loop: true; dur: 10000; easing: linear;">
+            <a-circle color="white" radius="15" position="0 550 0" rotation="90 0 0" roughness="0"
+                light="type: point; intensity: 1">
+            </a-circle>
+            <a-light type="spot" color="yellow" position="0 525 0" angle="0" intensity="500"
+                light="angle: 90; decay: 0; distance: 100" rotation="90 0 0"></a-light>
+
+        </a-entity>-->
+
+        <a-plane static-body src="#pool-water" rotation="-90 0 0" position="0 0.6 0" scale="50 50" roughness="1"
+            opacity="0.5">
+        </a-plane>
+        <a-plane static-body color="red" rotation="90 0 0" position="0 46.5 0" scale="60 60" roughness="1" opacity="0">
+        </a-plane>
+        </a-entity>
+        <a-entity id="ocean" ocean="density: 20; width: 50; depth: 50; speed: 4"
+            material="src: #pool-water; opacity: 0.3; metalness: 0; roughness: 1; repeat: 5 5" rotation="-90 0 0"
+            position="0 0.5 0">
+        </a-entity>
+        <a-entity id="ocean" ocean="density: 20; width: 50; depth: 50; speed: 4"
+            material="src: #pool-water; opacity: 0.3; metalness: 0; roughness: 1; repeat: 5 5" rotation="-90 0 0"
+            position="0 1 0">
+        </a-entity>
+        <a-entity id="ocean" ocean="density: 20; width: 50; depth: 50; speed: 4"
+            material="src: #pool-water; opacity: 0.3; metalness: 0; roughness: 1; repeat: 5 5" rotation="-90 0 0"
+            position="0 1.3 0">
+        </a-entity>
+
+        <a-plane static-body src="#pool-tiles" rotation="-90 0 0" position="0 -3 0" scale="50 50" roughness="1"
+            opacity="1" repeat="5 5">
+        </a-plane>
+
+
+        <a-plane static-body src="#pool-tiles" rotation="180 0 0" position="0 -1 25" scale="50 5" roughness="1"
+            repeat="4 0.5">
+        </a-plane>
+        <a-plane static-body src="#pool-tiles" rotation="0 0 0" position="0 -1 -25" scale="50 5" roughness="1"
+            repeat="4 0.5">
+        </a-plane>
+        <a-plane static-body src="#pool-tiles" rotation="0 -90 0" position="25 -1 0" scale="50 5" roughness="1"
+            repeat="4 0.5">
+        </a-plane>
+        <a-plane static-body src="#pool-tiles" rotation="0 90 0" position="-25 -1 0" scale="50 5" roughness="1"
+            repeat="4 0.5">
+        </a-plane>
+
+        <a-plane static-body src="#pool-tiles" rotation="-90 0 0" position="0 1.5 27.5" scale="50 5" roughness="1"
+            repeat="4 0.5">
+        </a-plane>
+        <a-plane static-body src="#pool-tiles" rotation="-90 0 0" position="27.5 1.5 27.5" scale="5 5" roughness="1"
+            repeat="0.45 0.5">
+        </a-plane>
+        <a-plane static-body src="#pool-tiles" rotation="-90 90 0" position="-27.5 1.5 0" scale="50 5" roughness="1"
+            repeat="4 0.5">
+        </a-plane>
+        <a-plane static-body src="#pool-tiles" rotation="-90 0 0" position="-27.5 1.5 -27.5" scale="5 5" roughness="1"
+            repeat="0.5 0.5">
+        </a-plane>
+        <a-plane static-body src="#pool-tiles" rotation="-90 -90 0" position="27.5 1.5 0" scale="50 5" roughness="1"
+            repeat="4 0.5">
+        </a-plane>
+        <a-plane static-body src="#pool-tiles" rotation="-90 0 0" position="27.5 1.5 -27.5" scale="5 5" roughness="1"
+            repeat="0.45 0.5">
+        </a-plane>
+        <a-plane static-body src="#pool-tiles" rotation="-90 0 0" position="0 1.5 -27.5" scale="50 5" roughness="1"
+            repeat="4 0.5">
+        </a-plane>
+        <a-plane static-body src="#pool-tiles" rotation="-90 0 0" position="-27.5 1.5 27.5" scale="5 5" roughness="1"
+            repeat="0.45 0.5">
+        </a-plane>
+
+
+        <a-plane static-body color="red" opacity="0" rotation="180 0 0" position="0 14 30" scale="60 15" roughness="1">
+        </a-plane>
+        <a-plane static-body src="#pool-wall" normal-map="#pool-wall-map" normal-texture-repeat="100 10"
+            rotation="180 0 0" position="0 4 30" scale="60 5" roughness="1" repeat="100 10">
+        </a-plane>
+        <a-plane static-body color="red" opacity="0" rotation="0 0 0" position="0 14 -30" scale="60 15" roughness="1">
+        </a-plane>
+        <a-plane static-body src="#pool-wall" normal-map="#pool-wall-map" normal-texture-repeat="100 10"
+            rotation="0 0 0" position="0 4 -30" scale="60 5" roughness="1" repeat="100 10">
+        </a-plane>
+        <a-plane static-body color="red" opacity="0" rotation="0 -90 0" position="30 14 0" scale="60 15" roughness="1">
+        </a-plane>
+        <a-plane static-body src="#pool-wall" normal-map="#pool-wall-map" normal-texture-repeat="100 10"
+            rotation="0 -90 0" position="30 4 0" scale="60 5" roughness="1" repeat="100 10">
+        </a-plane>
+        <a-plane static-body color="red" opacity="0" rotation="0 90 0" position="-30 14 0" scale="60 15" roughness="1">
+        </a-plane>
+        <a-plane static-body src="#pool-wall" normal-map="#pool-wall-map" normal-texture-repeat="100 10"
+            rotation="0 90 0" position="-30 4 0" scale="60 5" roughness="1" repeat="100 10">
+        </a-plane>
+        <a-plane static-body color="green" opacity="0" rotation="180 0 0" position="0 34 30" scale="60 25"
+            roughness="1">
+        </a-plane>
+        <a-plane static-body color="green" opacity="0" rotation="0 0 0" position="0 34 -30" scale="60 25" roughness="1">
+        </a-plane>
+        <a-plane static-body color="green" opacity="0" rotation="0 -90 0" position="30 34 0" scale="60 25"
+            roughness="1">
+        </a-plane>
+        <a-plane static-body color="green" opacity="0" rotation="0 90 0" position="-30 34 0" scale="60 25"
+            roughness="1">
+        </a-plane>
+
+        <a-entity id="light" light="type: ambient; color: #888; intensity: 0.5">
+        </a-entity>
+
+        <a-sphere dynamic-body="linearDamping: 0; angularDamping: 0; mass: 1;" src="#beach-ball" position="1 15 0"
+            radius="1">
+        </a-sphere>
+        <a-sphere dynamic-body="linearDamping: 0; angularDamping: 0; mass: 1;" src="#beach-ball" position="2 15 0"
+            radius="1">
+        </a-sphere>
+        <a-sphere dynamic-body="linearDamping: 0; angularDamping: 0; mass: 1;" src="#beach-ball" position="3 15 0"
+            radius="1">
+        </a-sphere>
+        <a-sphere dynamic-body="linearDamping: 0; angularDamping: 0; mass: 1;" src="#beach-ball" position="4 15 0"
+            radius="1">
+        </a-sphere>
+        <a-sphere dynamic-body="linearDamping: 0; angularDamping: 0; mass: 1;" src="#beach-ball" position="5 15 0"
+            radius="1">
+        </a-sphere>
+        <a-sphere dynamic-body="linearDamping: 0; angularDamping: 0; mass: 1;" src="#beach-ball" position="0 15 1"
+            radius="1">
+        </a-sphere>
+        <a-sphere dynamic-body="linearDamping: 0; angularDamping: 0; mass: 1;" src="#beach-ball" position="0 15 2"
+            radius="1">
+        </a-sphere>
+        <a-sphere dynamic-body="linearDamping: 0; angularDamping: 0; mass: 1;" src="#beach-ball" position="0 15 3"
+            radius="1">
+        </a-sphere>
+        <a-sphere dynamic-body="linearDamping: 0; angularDamping: 0; mass: 1;" src="#beach-ball" position="0 15 4"
+            radius="1">
+        </a-sphere>
+        <a-sphere dynamic-body="linearDamping: 0; angularDamping: 0; mass: 1;" src="#beach-ball" position="0 15 5"
+            radius="1">
+        </a-sphere>
+        <a-sphere dynamic-body="linearDamping: 0; angularDamping: 0; mass: 1;" src="#logo" repeat="3 3"
+            position="0 15 8" radius="2">
+        </a-sphere>
+
+        <a-box color="#888" src="#sci-fi-metal" metalness="0.5" opacity="1" depth="0.2" height="3" width="10"
+            position="25 2 3" rotation="0 90 0">
+        </a-box>
+
+        <a-text position="24.7 3.1 0" height="10" width="10" value="Homepage" color="#fff" rotation="0 -90 0"
+            align="center"></a-text>
+        <a-cylinder radius="0.8" height="0.5" color="red" src="#sci-fi-metal" metalness="0.5" position="24.7 2 0"
+            rotation="0 0 90" link="href: index.html" event-set__enter="_event: mouseenter; color: yellow"
+            event-set__leave="_event: mouseleave; color: red" event-set__clicked="_event: click; color: green">
+        </a-cylinder>
+        <a-text position="24.7 3.1 3" height="10" width="10" value="VR Scene 2" color="#fff" rotation="0 -90 0"
+            align="center"></a-text>
+        <a-cylinder radius="0.8" height="0.5" color="red" src="#sci-fi-metal" metalness="0.5" position="24.7 2 3"
+            rotation="0 0 90" link="href: vr-scene-2.html" event-set__enter="_event: mouseenter; color: yellow"
+            event-set__leave="_event: mouseleave; color: red" event-set__clicked="_event: click; color: green">
+        </a-cylinder>
+        <a-text position="24.7 3.1 6" height="10" width="10" value="VR Scene 3" color="#fff" rotation="0 -90 0"
+            align="center"></a-text>
+        <a-cylinder radius="0.8" height="0.5" color="red" src="#sci-fi-metal" metalness="0.5" position="24.7 2 6"
+            rotation="0 0 90" link="href: vr-scene-3.html" event-set__enter="_event: mouseenter; color: yellow"
+            event-set__leave="_event: mouseleave; color: red" event-set__clicked="_event: click; color: green">
+        </a-cylinder>
+        <!--<a-entity
+            link="href: index.html; title: Homepage; image: #homepage; backgroundColor: black; borderColor: #222; titleColor: #000; peekMode: true; visualAspectEnabled: true"
+            position="18 2 24" rotation="0 0 0">
+        </a-entity>
+        <a-entity
+            link="href: vr-scene-2.html; title: VR Scene 2; image: #vr-scene-2; backgroundColor: purple; borderColor: #222; titleColor: #000; peekMode: true; visualAspectEnabled: true"
+            position="15 2 24" rotation="0 0 0">
+        </a-entity>
+        <a-entity
+            link="href: vr-scene-3.html; title: VR Scene 3; image: #vr-scene-3; backgroundColor: blue; borderColor: #222; titleColor: #000; peekMode: true; visualAspectEnabled: true"
+            position="12 2 24" rotation="0 0 0">
+        </a-entity>-->
+
+        <a-entity>
+            <a-box src="#logo" repeat="1 1" depth="0.1" width="25" height="12.5" position="50 30 0" rotation="0 90 0">
+            </a-box>
+            <a-cylinder radius="1" height="40" position="51.2 15 0"></a-cylinder>
+        </a-entity>
+        <a-entity>
+            <a-box src="#logo" repeat="1 1" depth="0.1" width="25" height="12.5" position="-50 30 0" rotation="0 90 0">
+            </a-box>
+            <a-cylinder radius="1" height="40" position="-51.2 15 0"></a-cylinder>
+        </a-entity>
+        <a-entity>
+            <a-box src="#logo" repeat="1 1" depth="0.1" width="25" height="12.5" position="0 30 50" rotation="0 0 0">
+            </a-box>
+            <a-cylinder radius="1" height="40" position="0 15 51.2"></a-cylinder>
+        </a-entity>
+        <a-entity>
+            <a-box src="#logo" repeat="1 1" depth="0.1" width="25" height="12.5" position="0 30 -50" rotation="0 0 0">
+            </a-box>
+            <a-cylinder radius="1" height="40" position="0 15 -51.2"></a-cylinder>
+        </a-entity>
+    </a-scene>
+</body>
+
+</html>
